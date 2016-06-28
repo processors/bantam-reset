@@ -1,0 +1,43 @@
+{
+  "name": "bantam-reset",
+  "version": "0.0.1",
+  "description": "Reset for Bantam CSS.",
+  "author": "Colm Tuite <colmtuite@gmail.com> (http://www.colmtuite.com)",
+  "style": "css/bantam-reset.css",
+  "main": "css/bantam-reset.css",
+  "files": [
+    "css",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colmtuite/bantam-reset.git"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "oocss",
+    "performance",
+    "framework",
+    "front-end"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "cssnano": "^3.5.2",
+    "postcss": "^5.0.21",
+    "precss": "^1.4.0",
+    "yargs": "^4.7.1"
+  },
+  "contributors": [
+    {
+      "name": "Colm Tuite",
+      "email": "colmtuite@gmail.com"
+    }
+  ],
+  "scripts": {
+    "start": "npm run build:css && npm run build:minify",
+    "build:css": "node ./scripts/postcss src/bantam-reset.css css/bantam-reset.css",
+    "build:minify": "node ./scripts/postcss -m src/bantam-reset.css css/bantam-reset.min.css",
+    "build:watch": "watch 'npm start' ./src/"
+  }
+}
